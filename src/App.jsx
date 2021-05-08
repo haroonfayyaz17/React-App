@@ -17,16 +17,15 @@ class App extends Component {
     console.log('App-Constructor')
   }
 
-  componentWillUnmount(){
+  //When Componenet is removed
+  componentWillUnmount () {
     console.log('Counter - Unmount')
-
   }
 
-
-
-  componentDidUpdate (prevProps,prevState) {
-    console.log('prevProps',prevProps)
-    console.log('prevState',prevState)
+  //When component is updated
+  componentDidUpdate (prevProps, prevState) {
+    // console.log('prevProps',prevProps)
+    // console.log('prevState',prevState)
   }
 
   handleDelete = counterId => {
