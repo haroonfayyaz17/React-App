@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-  state = {
-    count: 0,
-    // tags: ['tag1', 'tag2', 'tag3']
-  }
-
   styles = {
     fontSize: 10,
     fontWeight: 'bold'
   }
 
-  constructor(){
-    super();
-   this.handleIncrement= this.handleIncrement.bind(this);
+  constructor (props) {
+    super(props)
+    this.state = {
+      count: this.props.value
+      // tags: ['tag1', 'tag2', 'tag3']
+    }
+    console.log(this.props.value)
+    this.handleIncrement = this.handleIncrement.bind(this)
   }
 
   renderTags () {
@@ -27,18 +27,24 @@ class Counter extends Component {
     )
   }
 
-  handleIncrement = product =>{
-    console.log(product);
-    this.setState({count:this.state.count+1});
+  handleIncrement = product => {
+    console.log(product)
+    this.setState({ count: this.state.count + 1 })
   }
 
-
   render () {
+    console.log('props', this.props)
     return (
       <div>
-        
+        {this.props.children}
+        {/* <h4>{this.props.id}</h4> */}
         <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
-        <button onClick={()=>this.handleIncrement({id:1})} className='btn btn-secondary btn-sm'>Increment</button>
+        <button
+          onClick={() => this.handleIncrement({ id: 1 })}
+          className='btn btn-secondary btn-sm'
+        >
+          Increment
+        </button>
         {/* {this.state.tags.length===0 && 'Please create a new tag!'}
         {this.renderTags()} */}
       </div>
