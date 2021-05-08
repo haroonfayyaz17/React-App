@@ -21,6 +21,11 @@ class App extends Component {
     console.log('App-mounted')
   }
 
+  componentDidUpdate (prevProps,prevState) {
+    console.log('prevProps',prevProps)
+    console.log('prevState',prevState)
+  }
+
   handleDelete = counterId => {
     const counters = this.state.counters.filter(c => c.id !== counterId)
     this.setState({ counters })
@@ -44,7 +49,7 @@ class App extends Component {
   }
 
   render () {
-    const { onReset, counters, onDelete, onIncrement } = this.props
+    console.log('App-rendered')
     return (
       <React.Fragment>
         <NavBar
