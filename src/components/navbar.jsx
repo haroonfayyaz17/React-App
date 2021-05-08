@@ -3,7 +3,9 @@ class NavBar extends Component {
   render () {
     return (
       <nav className='navbar navbar-dark bg-info'>
-        <a className='navbar-brand' href='https://www.facebook.com/'>Facebook</a>
+        <a className='navbar-brand' href="#">
+          Navbar <span className='badge badge-pill badge-secondary'>{this.props.totalCounters}</span>
+        </a>
       </nav>
     )
   }
