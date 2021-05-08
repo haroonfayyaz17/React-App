@@ -1,30 +1,13 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-  styles = {
-    fontSize: 10,
-    fontWeight: 'bold'
-  }
-
+ 
   constructor (props) {
     super(props)
     this.state = {
       count: this.props.value
-      // tags: ['tag1', 'tag2', 'tag3']
     }
-    console.log(this.props.value)
     this.handleIncrement = this.handleIncrement.bind(this)
-  }
-
-  renderTags () {
-    if (this.state.tags.length === 0) return <p>There are no tags!</p>
-    return (
-      <ul>
-        {this.state.tags.map(tag => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-    )
   }
 
   handleIncrement = product => {
@@ -36,7 +19,6 @@ class Counter extends Component {
     console.log('props', this.props)
     return (
       <div>
-        <h4>{this.props.id}</h4>
         <span className={this.getBadgeClasses()}>{this.formateCount()}</span>
         <button
           onClick={() => this.handleIncrement({ id: 1 })}
@@ -44,8 +26,7 @@ class Counter extends Component {
         >
           Increment
         </button>
-        {/* {this.state.tags.length===0 && 'Please create a new tag!'}
-        {this.renderTags()} */}
+       
       </div>
     )
   }
@@ -59,11 +40,7 @@ class Counter extends Component {
     const { count } = this.state
     return count === 0 ? <span>Zero</span> : count
   }
-  incrementCount () {
-    //   this.setState({
-    //       this.state.count=this.state.count+1;
-    //   });
-  }
+  
 }
 
 export default Counter
