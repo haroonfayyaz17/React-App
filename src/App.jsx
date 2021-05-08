@@ -17,9 +17,12 @@ class App extends Component {
     console.log('App-Constructor')
   }
 
-  componentDidMount () {
-    console.log('App-mounted')
+  componentWillUnmount(){
+    console.log('Counter - Unmount')
+
   }
+
+
 
   componentDidUpdate (prevProps,prevState) {
     console.log('prevProps',prevProps)
